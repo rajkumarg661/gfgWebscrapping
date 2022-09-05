@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>GFG Details</title>
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">-->
+
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+  body {
+  background-color: #91ced4;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body  style="back">
+
+  <div class="table-users">
+   <div class="header">Congrats You are GFG Coder :)</div>
+
+   <table cellspacing="0">
+      <tr>
+          <th>Institute Name</th>
+          <th>Rank</th>
+          <th>Overall Coding Score</th>
+          <th>Monthly Coding Score</th>
+          <th>Total Problem Solved</th>
+          <th>SCHOOL</th>
+          <th>BASIC</th>
+          <th>EASY</th>
+          <th>MEDIUM</th>
+          <th>HARD</th>
+
+      </tr>
+         {% for coder in coders %}
+      <tr>
+          <td>{{coder['clg_name']}}</td>
+          <td>{{coder['rank']}}</td>
+          <td>{{coder['coding_score']}}</td>
+          <td>{{coder['monthly_coding']}}</td>
+          <td>{{coder['no_problem']}}</td>
+          <td>{{coder['school']}}</td>
+          <td>{{coder['basic']}}</td>
+          <td>{{coder['easy']}}</td>
+          <td>{{coder['medium']}}</td>
+          <td>{{coder['hard']}}</td>
+
+
+       {% endfor %}
+   </table>
+</div>
+
+</body>
+
+</html>
